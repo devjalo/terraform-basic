@@ -12,5 +12,6 @@ resource "aws_instance" "ec2-instance" {
   }
   subnet_id = aws_subnet.subnet.id
 
-  //optional script if
+  //optional startup-script
+  user_data = file("build/nginx/init.sh")
 }
