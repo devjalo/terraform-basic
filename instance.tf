@@ -7,8 +7,8 @@ resource "aws_instance" "ec2-instance" {
     aws_security_group.allow-ssh,
     aws_security_group.allow-tls
   ]
-
   tags {
     Name = var.ami_name
   }
+  subnet_id = aws_subnet.subnet.id
 }
